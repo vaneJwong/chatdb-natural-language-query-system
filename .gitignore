@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Local configuration and secrets
+.env
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+
+# Generated exports
+output/
+out_put_data/
+
+# Local datasets (keep the instructions)
+data/*.csv
+data/*.json
+!data/README.md
