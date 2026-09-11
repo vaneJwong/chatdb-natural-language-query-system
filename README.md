@@ -1,8 +1,11 @@
-# Natural-Language Database Query System
+# ChatDB: Natural-Language Database Query System
 
 ChatDB is a command-line learning tool that translates a small, documented set of
 natural-language requests into database queries. It supports the same product datasets
 in both MySQL and MongoDB, executes generated queries, and displays their results.
+
+This project was developed for USC DSCI 551 (Fall 2024). The public version keeps the
+working code while excluding credentials, IDE settings, and temporary runtime files.
 
 ## Features
 
@@ -25,6 +28,7 @@ in both MySQL and MongoDB, executes generated queries, and displays their result
 ├── requirements.txt    # Python dependencies
 ├── .env.example        # Configuration variable template
 ├── data/README.md      # Dataset setup and licensing note
+├── data/processed/     # Processed CSV and JSON datasets
 └── examples/commands.txt
 ```
 
@@ -87,8 +91,8 @@ show total number of appliances with comments greater than 5000 group by categor
 ## Security and data notes
 
 - Keep passwords and connection strings in environment variables; never commit `.env`.
-- The original third-party datasets are not included in this cleaned repository. Confirm
-  their licenses before publishing them.
+- Processed CSV and JSON datasets are included under `data/processed/`. Confirm that you
+  have redistribution rights before making a fork or copy public.
 - Database initialization can recreate project tables. Use a dedicated local database,
   not a production database.
 
@@ -98,3 +102,22 @@ show total number of appliances with comments greater than 5000 group by categor
 - The application expects the documented CSV column structure and filenames.
 - MySQL and MongoDB services must already be running.
 
+## Publish to GitHub
+
+This directory is already initialized as a Git repository. After creating an empty GitHub
+repository named `chatdb`, run:
+
+```bash
+git add .
+git commit -m "Prepare ChatDB for public release"
+git remote add origin https://github.com/YOUR_USERNAME/chatdb.git
+git push -u origin main
+```
+
+Review `git status` before committing. Do not add the excluded datasets or a local `.env`
+file unless you have checked the data license and removed every secret.
+
+## License
+
+No open-source license is included. Add one only if every contributor agrees to the chosen
+terms and the course or dataset policies permit publication.
