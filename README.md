@@ -20,15 +20,17 @@ working code while excluding credentials, IDE settings, and temporary runtime fi
 
 ```text
 .
-├── main.py             # CLI entry point and database selection
-├── sql_handler.py      # MySQL import and query execution
-├── nosql_handler.py    # MongoDB import and query execution
-├── utils.py            # Natural-language command parser
-├── console_utils.py    # Terminal formatting
+├── src/
+│   ├── main.py             # CLI entry point and database selection
+│   ├── sql_handler.py      # MySQL import and query execution
+│   ├── nosql_handler.py    # MongoDB import and query execution
+│   ├── utils.py            # Natural-language command parser
+│   └── console_utils.py    # Terminal formatting
+├── data/
+│   ├── sql/                # CSV datasets used during initialization
+│   └── nosql/              # JSON exports for MongoDB/NoSQL inspection
 ├── requirements.txt    # Python dependencies
 ├── .env.example        # Configuration variable template
-├── data/README.md      # Dataset setup and licensing note
-├── data/processed/     # Processed CSV and JSON datasets
 └── examples/commands.txt
 ```
 
@@ -66,13 +68,13 @@ working code while excluding credentials, IDE settings, and temporary runtime fi
    export CHATDB_MONGO_DATABASE=selected_data
    ```
 
-4. Follow `data/README.md` to provide the three CSV files. If they are stored elsewhere,
+4. The included CSV files are stored in `data/sql/`. To use another dataset directory,
    set `CHATDB_DATA_DIR` to that directory.
 
 5. Start the program:
 
    ```bash
-   python main.py
+   python src/main.py
    ```
 
 Choose `SQL` or `NoSQL`. Select `yes` when asked to initialize the database for the first
@@ -91,7 +93,7 @@ show total number of appliances with comments greater than 5000 group by categor
 ## Security and data notes
 
 - Keep passwords and connection strings in environment variables; never commit `.env`.
-- Processed CSV and JSON datasets are included under `data/processed/`. Confirm that you
+- CSV and JSON datasets are organized under `data/sql/` and `data/nosql/`. Confirm that you
   have redistribution rights before making a fork or copy public.
 - Database initialization can recreate project tables. Use a dedicated local database,
   not a production database.
@@ -105,17 +107,17 @@ show total number of appliances with comments greater than 5000 group by categor
 ## Publish to GitHub
 
 This directory is already initialized as a Git repository. After creating an empty GitHub
-repository named `chatdb`, run:
+repository, run:
 
 ```bash
 git add .
 git commit -m "Prepare ChatDB for public release"
-git remote add origin https://github.com/YOUR_USERNAME/chatdb.git
+git remote add origin https://github.com/YOUR_USERNAME/chatdb-natural-language-query-system.git
 git push -u origin main
 ```
 
-Review `git status` before committing. Do not add the excluded datasets or a local `.env`
-file unless you have checked the data license and removed every secret.
+Review `git status` before committing. Do not add a local `.env` file, and confirm the
+dataset license before publishing a fork or copy.
 
 ## License
 
