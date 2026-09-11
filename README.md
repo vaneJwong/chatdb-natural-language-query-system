@@ -4,10 +4,6 @@ ChatDB is a command-line learning tool that translates a small, documented set o
 natural-language requests into database queries. It supports the same product datasets
 in both MySQL and MongoDB, executes generated queries, and displays their results.
 
-This project was developed for USC DSCI 551 (Fall 2024). The public version keeps the
-working code while excluding credentials, generated files, IDE settings, and datasets
-whose redistribution terms have not been verified.
-
 ## Features
 
 - Choose MySQL or MongoDB from one interface.
