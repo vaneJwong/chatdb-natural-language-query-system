@@ -1,16 +1,21 @@
-# Dataset setup
+# Datasets
 
-The `processed/` directory contains the cleaned CSV and JSON exports retained with this
-repository.
+The datasets are separated by database-oriented format:
 
-The current application initialization flow expects these three source CSV files:
+- `sql/` contains CSV files.
+- `nosql/` contains JSON exports.
 
-- `Air Conditioners.csv`
-- `All Appliances.csv`
-- `All Car and Motorbike Products.csv`
+The current initialization flow reads these CSV files from `sql/` for both database modes:
 
-The source files use different names and schemas from the processed exports. Place them in
-this directory, or keep them elsewhere and set `CHATDB_DATA_DIR` to that directory.
+- `air_conditioners.csv`
+- `all_appliances.csv`
+- `all_car_and_motorbike_products.csv`
+
+When MongoDB is selected, ChatDB converts the CSV rows into MongoDB documents. The JSON
+files in `nosql/` are retained exports for inspection and reuse; the current importer does
+not read them directly.
+
+To use CSV files stored elsewhere, set `CHATDB_DATA_DIR` to their directory.
 
 Confirm that the applicable dataset license permits redistribution before making a fork or
 copy public.
