@@ -1,12 +1,16 @@
 # Dataset setup
 
-Place these three source CSV files in this directory before initializing a database:
+The `processed/` directory contains the cleaned CSV and JSON exports retained with this
+repository.
 
-- Air Conditioners.csv
-- All Appliances.csv
-- All Car and Motorbike Products.csv
+The current application initialization flow expects these three source CSV files:
 
-The files are intentionally excluded from Git because they are third-party data. You can
-instead keep them elsewhere and set CHATDB_DATA_DIR to that directory.
+- `Air Conditioners.csv`
+- `All Appliances.csv`
+- `All Car and Motorbike Products.csv`
 
-Do not commit a dataset until you have confirmed that its license permits redistribution.
+The source files use different names and schemas from the processed exports. Place them in
+this directory, or keep them elsewhere and set `CHATDB_DATA_DIR` to that directory.
+
+Confirm that the applicable dataset license permits redistribution before making a fork or
+copy public.
