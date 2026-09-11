@@ -1,4 +1,4 @@
-# ChatDB: Natural-Language Database Query System
+# Natural-Language Database Query System
 
 ChatDB is a command-line learning tool that translates a small, documented set of
 natural-language requests into database queries. It supports the same product datasets
