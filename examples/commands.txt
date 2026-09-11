@@ -1,0 +1,176 @@
+Data Query System Command Guide
+=============================
+
+SQL Query Examples
+----------------
+1. Basic Queries:
+# View air conditioners
+show me air conditioners limit 10 records
+
+# View appliances with price sorting
+show me appliances in ascending price limit 15 records
+
+# View automotive products by price range
+show me car and motorbike products with price between 10000 and 50000 limit 20 records
+
+2. Price-based Queries:
+# High-end products
+show me appliances with price greater than 20000 in descending price limit 10 records
+
+# Budget products
+show me air conditioners with price between 5000 and 15000 in ascending price limit 15 records
+
+3. Discount Analysis:
+# High discount items
+show me appliances with discount greater than 30 in descending price limit 10 records
+
+# Value deals
+show me air conditioners with price between 10000 and 30000 and discount greater than 25 limit 15 records
+
+4. Complex Price Combinations:
+# Premium products with high ratings
+show me appliances with price greater than 30000 and rating greater than 4.5 in descending price limit 10 records
+
+# Popular budget items
+show me air conditioners with price less than 20000 and comments greater than 1000 in ascending price limit 15 records
+
+SQL Join Query Examples
+---------------------
+1. Two-Table Joins:
+# Basic Join Examples
+show me appliances including air conditioners
+show me appliances related to air conditioners
+
+# Join with Rating
+show me appliances including air conditioners with rating greater than 4
+show me appliances related to air conditioners with rating greater than 4.5 limit 10 records
+
+# Join with Price
+show me appliances including air conditioners with price greater than 10000 in descending price
+show me appliances related to air conditioners with price greater than 20000 in ascending price
+
+2. Three-Table Joins:
+# Basic Three-way Join
+show me appliances together with air conditioners connected to car and motorbike products
+
+# Three-way Join with Conditions
+show me appliances together with air conditioners connected to car and motorbike products with rating greater than 4
+
+3. Join with Aggregation:
+# Category Analysis
+show total number of appliances including air conditioners group by category
+show total number of appliances related to air conditioners with rating greater than 4 group by category
+
+# Price Analysis
+show average price for appliances including air conditioners group by category
+show price range for appliances related to air conditioners group by category
+
+NoSQL Query Examples
+------------------
+1. Basic Queries:
+# View products
+show me air conditioners limit 10 records
+show me appliances limit 15 records
+show me car and motorbike products limit 20 records
+
+2. Rating-based Queries:
+# High-rated products
+show me appliances with rating greater than 4.5 limit 10 records
+show me air conditioners with rating greater than 4.3 limit 15 records
+
+3. Popularity Queries:
+# Popular products (by comment count)
+show me appliances with comments greater than 5000 limit 10 records
+show me air conditioners with comments greater than 2000 limit 15 records
+
+4. Category Analysis:
+# Group by category
+show total number of appliances group by category
+show total number of air conditioners group by category
+
+5. Combined Conditions:
+# High-rated and popular
+show me appliances with rating greater than 4.3 and comments greater than 3000 limit 15 records
+
+
+Query Syntax Guide
+----------------
+SQL Specific:
+1. Price Queries:
+   - with price greater than X
+   - with price between X and Y
+   - in ascending/descending price
+   - with discount greater than X
+   - with actual price greater than X
+
+2. Price Combinations:
+   - Can combine price with ratings and comments
+   - Can use price sorting with any condition
+   - Can use price ranges with discounts
+
+NoSQL Specific:
+1. Rating Queries:
+   - with rating greater than X
+   - with comments greater than X
+
+2. Category Analysis:
+   - group by category
+   - Can combine with ratings and comments
+
+Important Notes
+-------------
+1. SQL Features:
+   - Full price analysis support
+   - Complex price range queries
+   - Discount calculations
+   - Price-based sorting
+
+2. NoSQL Features:
+   - Fast text-based queries
+   - Efficient rating filters
+   - Quick category grouping
+   - Comment count analysis
+
+3. Common Features:
+   - Default 5 records display
+   - Case insensitive commands
+   - Natural language support
+   - Multiple condition combinations
+
+Join Query Syntax Guide
+---------------------
+1. Two-Table Join Keywords:
+   - related to (INNER JOIN)
+   - matching (INNER JOIN)
+   - combined with (INNER JOIN)
+   - including (LEFT JOIN)
+   - along with (LEFT JOIN)
+   - with all (LEFT JOIN)
+
+2. Three-Table Join Keywords:
+   - together with ... connected to (INNER JOIN)
+
+3. Join Combinations:
+   - Can combine with rating conditions
+   - Can combine with price conditions
+   - Can combine with sorting
+   - Can combine with grouping
+   - Can combine with limits
+
+Important Notes for Joins
+-----------------------
+1. Table Relationships:
+   - Appliances <-> Air Conditioners (sub_category)
+   - Appliances <-> Car and Motorbike Products (main_category)
+   - Air Conditioners <-> Car and Motorbike Products (main_category)
+
+2. Join Limitations:
+   - Two-table joins support both INNER and LEFT JOIN
+   - Three-table joins only support INNER JOIN
+   - Join conditions are predefined based on category relationships
+
+3. Best Practices:
+   - Use meaningful table combinations
+   - Add conditions after join specifications
+   - Consider using limits for large joins
+   - Group by category for statistical analysis
